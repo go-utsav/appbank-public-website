@@ -10,17 +10,19 @@ body {
   position: fixed;
   width: 100%;
   top: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 1000;
   transition: transform 0.3s ease-in-out;
+  max-width: 1320px; /* This matches Bootstrap's container max-width */
 }
 
 .navbar-hide {
-  transform: translateY(-100%);
+  transform: translate(-50%, -100%);
 }
 
 .navbar-show {
-  transform: translateY(0);
+  transform: translate(-50%, 0);
 }
 
 .navbar-custom-background {
@@ -35,7 +37,8 @@ body {
   border-bottom: 1px solid rgba(129, 217, 240, 0.1);
   border-radius: 20px;
   padding: 1rem 0;
-  margin: 10px 0;
+  margin: 10px auto;
+  width: 100%;
 }
   
   .navbar-brand-logo {
