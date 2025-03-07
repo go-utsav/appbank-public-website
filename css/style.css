@@ -125,6 +125,7 @@ section.hero-banner {
     color: white;
     font-family: 'Inter', sans-serif;
     overflow: hidden;
+    padding-bottom: 0rem;
 }
 
 /* Background pattern/image layer */
@@ -588,4 +589,57 @@ span.light-color {
 /* Remove divider from last item */
 .custom-accordion-item:last-child .custom-accordion-divider {
     display: none;
+}
+
+/* hero banner */
+
+.scroll-explore {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.scroll-circle {
+  background-color: #81D9F0;
+  width: 250px;
+  height: 75px; /* Half of the original height */
+  border-top-left-radius: 75px;
+  border-top-right-radius: 75px;
+  clip-path: ellipse(75px 75px at 50% 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  align-items:last baseline;
+}
+
+
+.scroll-circle p {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.scroll-arrow {
+    color: #000;
+    font-size: 20px;
+    animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(5px);
+    }
+    60% {
+        transform: translateY(3px);
+    }
+}
+
+.scroll-circle:hover {
+    transform: scale(1.05);
 }
