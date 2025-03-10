@@ -128,6 +128,9 @@ section.hero-banner {
     padding-bottom: 0rem;
 }
 
+.text-highlight {
+    background: linear-gradient(transparent 60%, #8dcadb 60%);
+}
 /* Background pattern/image layer */
 section.hero-banner::before {
     content: '';
@@ -140,7 +143,7 @@ section.hero-banner::before {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    /* opacity: 0.; */
+    
     mix-blend-mode: overlay;
     z-index: 1;
 }
