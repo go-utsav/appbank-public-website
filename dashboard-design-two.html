@@ -1,86 +1,194 @@
-<!doctype html>
-<html lang="en">
+    <!doctype html>
+    <html lang="en">
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="css/dashboard-style-two.css">
-</head>
+        <link rel="stylesheet" href="css/dashboard-style-two.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    </head>
 
-<body>
-    <!-- navigation bar -->
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light  py-3">
-        <div class="container-fluid">
-            <!-- Left Column - Logo -->
-            <div class="col-md-2">
-                <a class="navbar-brand" href="#">
-                    <h4 class="text-primary mb-0">Appbank</h4>
-                </a>
+    <body>
+        <!-- navigation bar -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+                <!-- Mobile Header -->
+                <div class="mobile-header d-lg-none w-100">
+                    <div class="mobile-top-bar">
+                        <div class="menu-brand-container">
+                            <button class="menu-toggle" id="menuToggle">
+                                <i class="fas fa-bars"></i>
+                            </button>
+                            <div class="mobile-brand">
+                                <h4 class="text-primary mb-0 d-flex align-items-center">Appbank</h4>
+                            </div>
+                        </div>
+                        
+                        <div class="notification-area">
+                            <!-- Bell Icon with Notification Badge -->
+                            <div class="position-relative">
+                                <div class="icon-circle">
+                                    <i class="fas fa-bell text-dark"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
+                                </div>
+                            </div>
+                            <!-- Gift Icon -->
+                            <div class="ms-2">
+                                <div class="icon-circle">
+                                    <i class="fas fa-gift text-dark"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Search Box for Mobile -->
+                    <div class="mobile-search mt-3">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0" placeholder="Search..." aria-label="Search">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Content - Will be hidden on mobile -->
+                <div class="desktop-content d-none d-lg-flex w-100">
+                    <!-- Center Column - Search Box -->
+                    <div class="col-12 col-md-8">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0" placeholder="Search..."
+                                aria-label="Search">
+                        </div>
+                    </div>
+
+                    <!-- Right Column - Icons and User Profile -->
+                    <div class="col-12 col-md-4">
+                        <div class="d-flex align-items-center justify-content-end mobile-stack">
+                            <!-- Bell Icon with Notification Badge -->
+                            <div class="position-relative me-3">
+                                <div class="icon-circle">
+                                    <i class="fas fa-bell text-dark"></i>
+                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
+                                </div>
+                            </div>
+                            <!-- Gift Icon -->
+                            <div class="me-3">
+                                <div class="icon-circle">
+                                    <i class="fas fa-gift text-dark"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Upgrade Button -->
+                            <button class="btn btn-primary me-3 px-4">Upgrade</button>
+
+                            <!-- User Profile -->
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="userMenu"
+                                    data-bs-toggle="dropdown">
+                                    <img src="images/dashboard/person-png.jpg" class="rounded-circle me-2" width="40" height="40"
+                                        alt="User">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <span class="fw-bold">Welcome</span>
+                                        <span>Johnson John</span>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </nav>
 
-            <!-- Center Column - Search Box -->
-            <div class="col-md-6">
-                <div class="input-group">
-                    <input type="text" class="form-control bg-light border-0" placeholder="Search..."
-                        aria-label="Search">
+        <!-- Left Sidebar Menu -->
+        <div class="left-menu">
+            <!-- Add Logo at the top -->
+        
+            
+            <!-- Top Menu Group -->
+            <div class="menu-group">
+                <div class="menu-logo">
+                    <h4 class="text-primary mb-0 d-flex align-items-center">Appbank</h4>
+                </div>
+                <div class="menu-item active">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Cards</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-exchange-alt"></i>
+                    <span>Transactions</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <span>Bills Payments</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Analytics</span>
+                </div>
+                <div class="menu-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Setting</span>
                 </div>
             </div>
 
-            <!-- Right Column - Icons and User Profile -->
-            <div class="col-md-4">
-                <div class="d-flex align-items-center justify-content-end">
-                    <!-- Bell Icon with Notification Badge -->
-                    <div class="position-relative me-3">
-                        <i class="fas fa-bell fs-5"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                            1
-                        </span>
-                    </div>
-
-                    <!-- Gift Icon -->
-                    <div class="me-3">
-                        <i class="fas fa-gift fs-5"></i>
-                    </div>
-
-                    <!-- Upgrade Button -->
-                    <button class="btn btn-primary me-3 px-4">Upgrade</button>
-
-                    <!-- User Profile -->
-                    <div class="dropdown">
-                        <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="userMenu"
-                            data-bs-toggle="dropdown">
-                            <img src="https://via.placeholder.com/40" class="rounded-circle me-2" width="40" height="40"
-                                alt="User">
-                            <div class="d-flex flex-column align-items-start">
-                                <span class="fw-bold">Welcome</span>
-                                <span>Johnson John</span>
-                            </div>
-                        </button>
-                    </div>
+            <!-- Bottom Menu Group -->
+            <div class="menu-group bottom">
+                <div class="menu-item">
+                    <i class="fas fa-headset"></i>
+                    <span>Support?</span>
+                </div>
+                <div class="menu-item logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
                 </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+        <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-</body>
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+        -->
 
-</html>
+        <!-- Add before closing body tag -->
+        <div class="menu-overlay"></div>
+
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const leftMenu = document.querySelector('.left-menu');
+            const overlay = document.querySelector('.menu-overlay');
+            const mobileHeader = document.querySelector('.mobile-header');
+
+            menuToggle.addEventListener('click', function() {
+                leftMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                mobileHeader.classList.toggle('menu-open');
+            });
+
+            overlay.addEventListener('click', function() {
+                leftMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                mobileHeader.classList.remove('menu-open');
+            });
+        });
+        </script>
+    </body>
+
+    </html>

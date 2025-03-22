@@ -1,6 +1,6 @@
 /* Navbar Styles */
 .navbar {
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    /* box-shadow: 0 2px 4px rgba(0,0,0,0.05); */
 }
 
 .form-control {
@@ -28,13 +28,20 @@
 
 /* Upgrade Button */
 .btn-primary {
-    background-color: #2F6B6C;
-    border: none;
-    border-radius: 6px;
+    background-color: #1F6679;
+    border: 1px solid #1F6679;
+    border-radius: 20px;
+    font-size: 16px;
 }
 
+.text-primary {
+    color: #1F6679 !important;
+    font-weight: 700;
+}
 .btn-primary:hover {
-    background-color: #255859;
+    background-color: white;
+    border: 1px solid #1F6679;
+    color: #1F6679;
 }
 
 /* User Profile Dropdown */
@@ -49,4 +56,458 @@
 
 .dropdown-toggle:focus {
     box-shadow: none;
+}
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.icon-circle:hover {
+    background-color: #477683;
+}
+
+.icon-circle i {
+    font-size: 20px;
+    transition: color 0.2s ease;
+}
+
+/* Add this new rule for icon color change on hover */
+.icon-circle:hover i {
+    color: white !important;
+}
+
+/* Adjust notification badge position */
+.position-relative .badge {
+    transform: translate(-50%, -50%);
+}
+
+
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.icon-circle i {
+    font-size: 20px;
+}
+
+/* Left Menu Styles */
+.left-menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: white;
+    /* box-shadow: 2px 0 4px rgba(0,0,0,0.05); */
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menu-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    background-color: #d9dcdf;
+}
+
+.menu-item.active {
+    background-color: #1F6679;
+    color: white;
+}
+
+.menu-item i {
+    font-size: 18px;
+    width: 20px;
+}
+
+.menu-item span {
+    font-size: 15px;
+}
+
+.menu-item.logout {
+    color: #dc3545;
+}
+
+/* Adjust main content to accommodate left menu */
+.container-fluid {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding-left: 0;
+}
+
+/* Left Menu Logo Styles */
+.menu-logo {
+    padding: 0 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;  /* Align logo to left */
+    align-items:flex-end;
+}
+
+.menu-logo h4 {
+    font-size: 24px;
+    color: #1F6679;
+}
+
+/* Search Box Styles */
+.input-group {
+    width: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    
+}
+
+.input-group .form-control {
+    width: 100%;
+    border-radius: 20px;
+}
+
+/* Adjust the column width to be more flexible */
+.col-md-8 {
+    display: flex;
+    justify-content: center;
+}
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+    position: fixed;
+    left: 20px;
+    top: 20px;
+    z-index: 1050;
+    background: none;
+    border: none;
+    color: #1F6679;
+    font-size: 24px;
+    display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 991px) {
+    /* Reset container padding */
+    .container-fluid {
+        padding: 10px 15px;
+    }
+
+    /* Mobile Header Styles */
+    .mobile-header {
+        padding: 10px 0;
+    }
+
+    /* Menu Toggle Button */
+    .menu-toggle {
+        background: transparent;
+        border: none;
+        padding: 0;
+        font-size: 20px;
+        color: #1F6679;
+    }
+
+    /* Mobile Actions (Bell & Gift) */
+    .mobile-actions {
+        display: flex;
+        align-items: center;
+    }
+
+    .icon-circle {
+        width: 35px;
+        height: 35px;
+        background-color: #f5f5f5;
+    }
+
+    .icon-circle i {
+        font-size: 16px;
+    }
+
+    /* Mobile Search */
+    .mobile-search {
+        margin-bottom: 10px;
+    }
+
+    .mobile-search .input-group {
+        width: 100%;
+    }
+
+    .mobile-search .form-control {
+        height: 40px;
+        font-size: 14px;
+    }
+
+    /* User Profile for Mobile */
+    .dropdown {
+        width: 100%;
+        margin-top: 15px;
+    }
+
+    .dropdown button {
+        width: 100%;
+        padding: 10px;
+        background: #f5f5f5;
+        border-radius: 8px;
+        justify-content: flex-start;
+    }
+
+    /* Upgrade Button */
+    .btn-primary {
+        width: 100%;
+        margin: 15px 0;
+        height: 45px;
+    }
+
+    /* Left Menu Adjustments */
+    .left-menu {
+        width: 80%;
+        max-width: 280px;
+    }
+
+    /* Badge Adjustment */
+    .badge {
+        transform: translate(-50%, -50%);
+        font-size: 8px;
+        padding: 4px 6px;
+    }
+
+    /* Show menu toggle button */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Left Menu Mobile Styles */
+    .left-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1040;
+    }
+
+    .left-menu.active {
+        transform: translateX(0);
+    }
+
+    /* Navbar Mobile Styles */
+    .navbar {
+        padding-left: 70px;
+    }
+
+    .container-fluid {
+        margin-left: 0;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .mobile-stack {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    /* Adjust columns for mobile */
+    .col-md-8, .col-md-4 {
+        width: 100%;
+        padding: 10px 15px;
+    }
+
+    /* Profile dropdown adjustments */
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Icons container adjustments */
+    .d-flex.align-items-center.justify-content-end {
+        justify-content: center !important;
+        gap: 15px;
+    }
+
+    /* Search box adjustments */
+    .input-group {
+        width: 100%;
+    }
+
+    /* Upgrade button adjustment */
+    .btn-primary {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 576px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .icon-circle {
+        width: 32px;
+        height: 32px;
+    }
+
+    .mobile-header {
+        padding: 5px 0;
+    }
+
+    .dropdown button img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .dropdown button span {
+        font-size: 14px;
+    }
+
+    .menu-logo h4 {
+        font-size: 20px;
+    }
+}
+
+/* Add overlay when menu is open */
+.menu-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1030;
+}
+
+.menu-overlay.active {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+}
+
+/* Desktop icon adjustments */
+@media (min-width: 992px) {
+    .icon-circle {
+        margin-right: 5px;
+    }
+    
+    .mobile-stack {
+        gap: 10px;
+    }
+}
+
+/* Mobile Header Specific Styles */
+.mobile-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 5px 10px;
+    position: relative;
+}
+
+.menu-brand-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.mobile-brand {
+    transition: opacity 0.3s ease;
+}
+
+.mobile-brand h4 {
+    font-size: 20px;
+    margin: 0;
+    padding-left: 20px;
+}
+
+/* Adjust menu toggle position */
+.menu-toggle {
+    background: transparent;
+    border: none;
+    padding: 8px;
+    z-index: 1060;
+    transition: all 0.3s ease;
+}
+
+/* When left menu is active */
+.left-menu.active + .navbar .menu-toggle {
+    transform: translateX(240px);
+    background: #f5f5f5;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.left-menu.active + .navbar .mobile-brand {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Notification area adjustments */
+.notification-area {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: auto;
+}
+
+/* Ensure icons stay in place */
+.icon-circle {
+    width: 38px;
+    height: 38px;
+    background: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 991px) {
+    .mobile-top-bar {
+        min-height: 50px;
+    }
+    
+    .menu-toggle i {
+        font-size: 20px;
+        color: #1F6679;
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+    .icon-circle {
+        width: 34px;
+        height: 34px;
+    }
+
+    .menu-toggle i {
+        font-size: 20px;
+    }
 }
