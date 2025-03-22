@@ -1,194 +1,632 @@
-    <!doctype html>
-    <html lang="en">
+<!doctype html>
+<html lang="en">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="css/dashboard-style-two.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    </head>
+    <link rel="stylesheet" href="css/dashboard-style-two.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <body>
-        <!-- navigation bar -->
-        <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid">
-                <!-- Mobile Header -->
-                <div class="mobile-header d-lg-none w-100">
-                    <div class="mobile-top-bar">
-                        <div class="menu-brand-container">
-                            <button class="menu-toggle" id="menuToggle">
-                                <i class="fas fa-bars"></i>
+    <!-- fonts   -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <!-- Mobile Header -->
+            <div class="mobile-header d-lg-none w-100">
+                <div class="mobile-top-bar">
+                    <div class="menu-brand-container">
+                        <button class="menu-toggle" id="menuToggle">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <div class="mobile-brand">
+                            <h4 class="text-primary mb-0 d-flex align-items-center">Appbank</h4>
+                        </div>
+                    </div>
+
+                    <div class="notification-area">
+                        <!-- Bell Icon with Notification Badge -->
+                        <div class="position-relative">
+                            <div class="icon-circle">
+                                <i class="fas fa-bell text-dark"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
+                            </div>
+                        </div>
+                        <!-- Gift Icon -->
+                        <div class="ms-2">
+                            <div class="icon-circle">
+                                <i class="fas fa-gift text-dark"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search Box for Mobile -->
+                <div class="mobile-search mt-3">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0" placeholder="Search..."
+                            aria-label="Search">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Content - Will be hidden on mobile -->
+            <div class="desktop-content d-none d-lg-flex w-100">
+                <!-- Center Column - Search Box -->
+                <div class="col-12 col-md-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control bg-light border-0" placeholder="Search..."
+                            aria-label="Search">
+                    </div>
+                </div>
+
+                <!-- Right Column - Icons and User Profile -->
+                <div class="col-12 col-md-4">
+                    <div class="d-flex align-items-center justify-content-end mobile-stack">
+                        <!-- Bell Icon with Notification Badge -->
+                        <div class="position-relative me-3">
+                            <div class="icon-circle">
+                                <i class="fas fa-bell text-dark"></i>
+                                <span
+                                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
+                            </div>
+                        </div>
+                        <!-- Gift Icon -->
+                        <div class="me-3">
+                            <div class="icon-circle">
+                                <i class="fas fa-gift text-dark"></i>
+                            </div>
+                        </div>
+
+                        <!-- Upgrade Button -->
+                        <button class="btn btn-primary me-3 px-4">Upgrade</button>
+
+                        <!-- User Profile -->
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="userMenu"
+                                data-bs-toggle="dropdown">
+                                <img src="images/dashboard/person-png.jpg" class="rounded-circle me-2" width="40"
+                                    height="40" alt="User">
+                                <div class="d-flex flex-column align-items-start">
+                                    <span class="fw-bold">Welcome</span>
+                                    <span>Johnson John</span>
+                                </div>
                             </button>
-                            <div class="mobile-brand">
-                                <h4 class="text-primary mb-0 d-flex align-items-center">Appbank</h4>
-                            </div>
-                        </div>
-                        
-                        <div class="notification-area">
-                            <!-- Bell Icon with Notification Badge -->
-                            <div class="position-relative">
-                                <div class="icon-circle">
-                                    <i class="fas fa-bell text-dark"></i>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
-                                </div>
-                            </div>
-                            <!-- Gift Icon -->
-                            <div class="ms-2">
-                                <div class="icon-circle">
-                                    <i class="fas fa-gift text-dark"></i>
-                                </div>
-                            </div>
                         </div>
                     </div>
-
-                    <!-- Search Box for Mobile -->
-                    <div class="mobile-search mt-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0" placeholder="Search..." aria-label="Search">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Desktop Content - Will be hidden on mobile -->
-                <div class="desktop-content d-none d-lg-flex w-100">
-                    <!-- Center Column - Search Box -->
-                    <div class="col-12 col-md-8">
-                        <div class="input-group">
-                            <input type="text" class="form-control bg-light border-0" placeholder="Search..."
-                                aria-label="Search">
-                        </div>
-                    </div>
-
-                    <!-- Right Column - Icons and User Profile -->
-                    <div class="col-12 col-md-4">
-                        <div class="d-flex align-items-center justify-content-end mobile-stack">
-                            <!-- Bell Icon with Notification Badge -->
-                            <div class="position-relative me-3">
-                                <div class="icon-circle">
-                                    <i class="fas fa-bell text-dark"></i>
-                                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
-                                </div>
-                            </div>
-                            <!-- Gift Icon -->
-                            <div class="me-3">
-                                <div class="icon-circle">
-                                    <i class="fas fa-gift text-dark"></i>
-                                </div>
-                            </div>
-                            
-                            <!-- Upgrade Button -->
-                            <button class="btn btn-primary me-3 px-4">Upgrade</button>
-
-                            <!-- User Profile -->
-                            <div class="dropdown">
-                                <button class="btn dropdown-toggle d-flex align-items-center" type="button" id="userMenu"
-                                    data-bs-toggle="dropdown">
-                                    <img src="images/dashboard/person-png.jpg" class="rounded-circle me-2" width="40" height="40"
-                                        alt="User">
-                                    <div class="d-flex flex-column align-items-start">
-                                        <span class="fw-bold">Welcome</span>
-                                        <span>Johnson John</span>
-                                    </div>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Left Sidebar Menu -->
-        <div class="left-menu">
-            <!-- Add Logo at the top -->
-        
-            
-            <!-- Top Menu Group -->
-            <div class="menu-group">
-                <div class="menu-logo">
-                    <h4 class="text-primary mb-0 d-flex align-items-center">Appbank</h4>
-                </div>
-                <div class="menu-item active">
-                    <i class="fas fa-th-large"></i>
-                    <span>Dashboard</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-credit-card"></i>
-                    <span>Cards</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-exchange-alt"></i>
-                    <span>Transactions</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <span>Bills Payments</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Analytics</span>
-                </div>
-                <div class="menu-item">
-                    <i class="fas fa-cog"></i>
-                    <span>Setting</span>
-                </div>
-            </div>
-
-            <!-- Bottom Menu Group -->
-            <div class="menu-group bottom">
-                <div class="menu-item">
-                    <i class="fas fa-headset"></i>
-                    <span>Support?</span>
-                </div>
-                <div class="menu-item logout">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>Logout</span>
                 </div>
             </div>
         </div>
+    </nav>
 
-        <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Left Sidebar Menu -->
+    <div class="left-menu">
+        <!-- Add Logo at the top -->
 
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-            crossorigin="anonymous"></script>
 
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        -->
+        <!-- Top Menu Group -->
+        <div class="menu-group">
+            <div class="menu-logo">
+                <h4 class="text-primary mb-0 d-flex align-items-center">Appbank</h4>
+            </div>
+            <div class="menu-item active">
+                <i class="fas fa-th-large"></i>
+                <span>Dashboard</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-credit-card"></i>
+                <span>Cards</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-exchange-alt"></i>
+                <span>Transactions</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-file-invoice-dollar"></i>
+                <span>Bills Payments</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Analytics</span>
+            </div>
+            <div class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Setting</span>
+            </div>
+        </div>
 
-        <!-- Add before closing body tag -->
-        <div class="menu-overlay"></div>
+        <!-- Bottom Menu Group -->
+        <div class="menu-group bottom">
+            <div class="menu-item">
+                <i class="fas fa-headset"></i>
+                <span>Support?</span>
+            </div>
+            <div class="menu-item logout">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </div>
+        </div>
+    </div>
 
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    <!-- Main Content -->
+    <div class="p-4 main-content-bg">
+       
+            <div class="container-fluid py-4">
+                <h3 class="text-primary text-center">Welcome back, Johnson John</h3>
+            </div>
+
+            <!-- Balance Cards Section -->
+            <div class="container-fluid ">
+                <div class="row g-4 d-flex justify-content-between">
+                    <!-- Personal Balance Card -->
+                    <div class="col-12 col-md-4">
+                        <div class="card balance-card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Personal Balance</h6>
+                                <h2 class="card-title mb-0">£7,585</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Income Card -->
+                    <div class="col-12 col-md-4">
+                        <div class="card balance-card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Monthly Income</h6>
+                                <h2 class="card-title mb-0">£7,585</h2>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Monthly Expenses Card -->
+                    <div class="col-12 col-md-4">
+                        <div class="card balance-card">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">Monthly Expenses</h6>
+                                <h2 class="card-title mb-0">£7,585</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="container-fluid py-4">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Chart Header -->
+                        <div class="chart-header d-flex justify-content-between align-items-center ">
+                            <!-- Chart Navigation -->
+                            <div class="chart-tabs">
+                                <button class="chart-tab active" data-tab="balance">
+                                    <i class="fas fa-chart-line"></i> Balance
+                                </button>
+                                <button class="chart-tab" data-tab="spending">
+                                    <i class="fas fa-chart-bar"></i> Spending
+                                </button>
+                                <button class="chart-tab" data-tab="target">
+                                    <i class="fas fa-bullseye"></i> Target
+                                </button>
+                            </div>
+
+                            <!-- Time Period Filter -->
+                            <div class="chart-filter">
+                                <select class="form-select" id="timeFilter">
+                                    <option value="month">This Month</option>
+                                    <option value="year">This Year</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Charts Container -->
+                        <div class="charts-container">
+                            <div id="balanceChart" class="chart-area active"></div>
+                            <div id="spendingChart" class="chart-area"></div>
+                            <div id="targetChart" class="chart-area"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transaction History Section -->
+            <div class="container-fluid py-4">
+                <div class="card">
+                    <div class="card-body">
+                        <!-- Header with Filter -->
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="card-title mb-0"> <b>Transaction History</b></h5>
+                            <div class="dropdown">
+                                <button class="btn btn-light dropdown-toggle" type="button" id="timeFilter"
+                                    data-bs-toggle="dropdown">
+                                    Monthly
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="timeFilter">
+                                    <li><a class="dropdown-item" href="#">Weekly</a></li>
+                                    <li><a class="dropdown-item active" href="#">Monthly</a></li>
+                                    <li><a class="dropdown-item" href="#">Yearly</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Transaction Table -->
+                        <div class="table-responsive">
+                            <table class="table transaction-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Transaction ID</th>
+                                        <th>Date</th>
+                                        <th>Status</th>
+                                        <th class="text-end">Amount</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="images/dashboard/person-png.jpg" class="rounded-circle me-2"
+                                                    width="35" height="35" alt="User">
+                                                <span>Andri</span>
+                                            </div>
+                                        </td>
+                                        <td>Transaction ID</td>
+                                        <td>aug 2, 2025</td>
+                                        <td>
+                                            <span class="badge transaction-status completed">Completed</span>
+                                        </td>
+                                        <td class="text-end">£7,585</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="images/dashboard/person-png.jpg" class="rounded-circle me-2"
+                                                    width="35" height="35" alt="User">
+                                                <span>Andri</span>
+                                            </div>
+                                        </td>
+                                        <td>Transaction ID</td>
+                                        <td>aug 2, 2025</td>
+                                        <td>
+                                            <span class="badge transaction-status completed">Completed</span>
+                                        </td>
+                                        <td class="text-end">£7,585</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <img src="images/dashboard/person-png.jpg" class="rounded-circle me-2"
+                                                    width="35" height="35" alt="User">
+                                                <span>Andri</span>
+                                            </div>
+                                        </td>
+                                        <td>Transaction ID</td>
+                                        <td>aug 2, 2025</td>
+                                        <td>
+                                            <span class="badge transaction-status pending">Pending</span>
+                                        </td>
+                                        <td class="text-end">£7,585</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    -->
+
+    <!-- Add before closing body tag -->
+    <div class="menu-overlay"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
             const menuToggle = document.getElementById('menuToggle');
             const leftMenu = document.querySelector('.left-menu');
             const overlay = document.querySelector('.menu-overlay');
             const mobileHeader = document.querySelector('.mobile-header');
 
-            menuToggle.addEventListener('click', function() {
+            menuToggle.addEventListener('click', function () {
                 leftMenu.classList.toggle('active');
                 overlay.classList.toggle('active');
                 mobileHeader.classList.toggle('menu-open');
             });
 
-            overlay.addEventListener('click', function() {
+            overlay.addEventListener('click', function () {
                 leftMenu.classList.remove('active');
                 overlay.classList.remove('active');
                 mobileHeader.classList.remove('menu-open');
             });
         });
-        </script>
-    </body>
+    </script>
 
-    </html>
+    <!-- Load Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <!-- Google Charts JavaScript -->
+    <script>
+        // Load Google Charts
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(initCharts);
+
+        function initCharts() {
+            drawBalanceChart();
+            drawSpendingChart();
+            drawTargetChart();
+
+            // Set up tab switching
+            setupTabs();
+        }
+
+        function drawBalanceChart() {
+            const data = new google.visualization.DataTable();
+            data.addColumn('string', 'Day');
+            data.addColumn('number', 'Balance');
+
+            // Dummy data
+            data.addRows([
+                ['1', 850],
+                ['5', 720],
+                ['10', 645],
+                ['15', 590],
+                ['20', 425],
+                ['25', 380],
+                ['30', 275]
+            ]);
+
+            const options = {
+                curveType: 'function',
+                colors: ['#1F6679'],
+                backgroundColor: 'transparent',
+                chartArea: {
+                    width: '95%',
+                    height: '85%'
+                },
+                legend: { position: 'none' },
+                vAxis: {
+                    format: '£#,###',
+                    gridlines: {
+                        color: '#f5f5f5',
+                        count: 6
+                    },
+                    textStyle: {
+                        color: '#6c757d',
+                        fontSize: 12
+                    },
+                    minorGridlines: {
+                        count: 0
+                    }
+                },
+                hAxis: {
+                    gridlines: {
+                        color: 'transparent'
+                    },
+                    textStyle: {
+                        color: '#6c757d',
+                        fontSize: 12
+                    }
+                },
+                lineWidth: 3,
+                pointSize: 6,
+                pointShape: 'circle',
+                animation: {
+                    startup: true,
+                    duration: 1000,
+                    easing: 'out'
+                }
+            };
+
+            const chart = new google.visualization.LineChart(document.getElementById('balanceChart'));
+            chart.draw(data, options);
+        }
+
+        function drawSpendingChart() {
+            const data = new google.visualization.DataTable();
+            data.addColumn('string', 'Week');
+            data.addColumn('number', 'Spending');
+
+            // Dummy data
+            data.addRows([
+                ['Week 1', 95],
+                ['Week 2', 145],
+                ['Week 3', 85],
+                ['Week 4', 120]
+            ]);
+
+            const options = {
+                colors: ['#1F6679'],
+                backgroundColor: 'transparent',
+                chartArea: {
+                    width: '95%',
+                    height: '85%'
+                },
+                legend: { position: 'none' },
+                vAxis: {
+                    format: '£#,###',
+                    gridlines: {
+                        color: '#f5f5f5',
+                        count: 6
+                    },
+                    textStyle: {
+                        color: '#6c757d',
+                        fontSize: 12
+                    },
+                    minorGridlines: {
+                        count: 0
+                    }
+                },
+                hAxis: {
+                    gridlines: {
+                        color: 'transparent'
+                    },
+                    textStyle: {
+                        color: '#6c757d',
+                        fontSize: 12
+                    }
+                },
+                lineWidth: 3,
+                pointSize: 6,
+                pointShape: 'circle',
+                animation: {
+                    startup: true,
+                    duration: 1000,
+                    easing: 'out'
+                }
+            };
+
+            const chart = new google.visualization.ColumnChart(document.getElementById('spendingChart'));
+            chart.draw(data, options);
+        }
+
+        function drawTargetChart() {
+            const data = new google.visualization.DataTable();
+            data.addColumn('string', 'Day');
+            data.addColumn('number', 'Actual');
+            data.addColumn('number', 'Target');
+            data.addColumn('number', 'Projected');
+
+            // Dummy data
+            data.addRows([
+                ['1', 20, 20, 20],
+                ['5', 18, 19, 19],
+                ['10', 15, 17, 18],
+                ['15', 12, 15, 16],
+                ['20', 8, 12, 14],
+                ['25', 5, 10, 12],
+                ['30', -8, 8, 10]
+            ]);
+
+            const options = {
+                curveType: 'function',
+                colors: ['#1F6679', '#28a745', '#ffc107'],
+                backgroundColor: 'transparent',
+                chartArea: {
+                    width: '95%',
+                    height: '85%'
+                },
+                legend: {
+                    position: 'top',
+                    alignment: 'center',
+                    textStyle: {
+                        color: '#6c757d',
+                        fontSize: 12,
+                        fontWeight: 500
+                    }
+                },
+                vAxis: {
+                    format: '£#,###',
+                    gridlines: {
+                        color: '#f5f5f5',
+                        count: 6
+                    },
+                    textStyle: {
+                        color: '#6c757d',
+                        fontSize: 12
+                    },
+                    minorGridlines: {
+                        count: 0
+                    }
+                },
+                hAxis: {
+                    gridlines: {
+                        color: 'transparent'
+                    },
+                    textStyle: {
+                        color: '#6c757d',
+                        fontSize: 12
+                    }
+                },
+                lineWidth: 3,
+                pointSize: 6,
+                pointShape: 'circle',
+                animation: {
+                    startup: true,
+                    duration: 1000,
+                    easing: 'out'
+                }
+            };
+
+            const chart = new google.visualization.LineChart(document.getElementById('targetChart'));
+            chart.draw(data, options);
+        }
+
+        function setupTabs() {
+            const tabs = document.querySelectorAll('.chart-tab');
+            const charts = document.querySelectorAll('.chart-area');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // Remove active class from all tabs and charts
+                    tabs.forEach(t => t.classList.remove('active'));
+                    charts.forEach(c => c.classList.remove('active'));
+
+                    // Add active class to clicked tab and corresponding chart
+                    tab.classList.add('active');
+                    document.getElementById(`${tab.dataset.tab}Chart`).classList.add('active');
+
+                    // Redraw the active chart
+                    switch (tab.dataset.tab) {
+                        case 'balance':
+                            drawBalanceChart();
+                            break;
+                        case 'spending':
+                            drawSpendingChart();
+                            break;
+                        case 'target':
+                            drawTargetChart();
+                            break;
+                    }
+                });
+            });
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const activeChart = document.querySelector('.chart-area.active');
+            if (activeChart) {
+                switch (activeChart.id) {
+                    case 'balanceChart':
+                        drawBalanceChart();
+                        break;
+                    case 'spendingChart':
+                        drawSpendingChart();
+                        break;
+                    case 'targetChart':
+                        drawTargetChart();
+                        break;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
