@@ -1054,6 +1054,19 @@ span.light-color {
     color: white;
 }
 
+.faq-icon {
+    height: 120px; /* Reduced from 200px to 120px */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .faq-icon {
+        height: 100px; /* Even smaller on mobile devices */
+    }
+}
+
 
 
 
